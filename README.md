@@ -1,6 +1,6 @@
 # SpaceX Rocket
 
-A new Flutter project.
+A New SpaceX Rocket App In Flutter.
 
 ## Getting Started
 
