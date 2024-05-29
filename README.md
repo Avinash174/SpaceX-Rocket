@@ -1,4 +1,4 @@
-# spacex_rocket
+# SpaceX Rocket
 
 A new Flutter project.
 
