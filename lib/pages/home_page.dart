@@ -13,12 +13,26 @@ class _HomePageScreenState extends State<HomePageScreen> {
   HomeViewModel homeViewModel = HomeViewModel();
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.sizeOf(context).width * 1;
+    final height = MediaQuery.sizeOf(context).height * 1;
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'Rocket Data',
-          style: GoogleFonts.workSans(),
+          style: GoogleFonts.poppins(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+          ),
         ),
+        centerTitle: true,
+      ),
+      body: ListView(
+        children: [
+          Container(
+            height: height * .55,
+            width: width,
+          ),
+        ],
       ),
     );
   }

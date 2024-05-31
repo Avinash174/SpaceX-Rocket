@@ -6,6 +6,7 @@ class HomeViewModel {
 
   Future<RocketData> fetchRocketDataApi() async {
     final response = await _repo.fetchRocketData();
+    print(response);
     return response;
   }
 }
