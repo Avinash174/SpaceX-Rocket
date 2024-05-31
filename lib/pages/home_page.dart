@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:spacex_rocket/model/rocket_model.dart';
 import 'package:spacex_rocket/view_model/home_view_model.dart';
 
 class HomePageScreen extends StatefulWidget {
@@ -31,6 +33,31 @@ class _HomePageScreenState extends State<HomePageScreen> {
           Container(
             height: height * .55,
             width: width,
+            child: FutureBuilder<RocketData>(
+                future: homeViewModel.fetchRocketDataApi(),
+                builder: (BuildContext context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Center(
+                      child: SpinKitCircle(
+                        size: 50,
+                      ),
+                    );
+                  } else {
+                    return ListView.builder(
+                      itemCount: snapshot.data!.id!.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Column(
+                          children: [
+                            Text(snapshot.data!.diameter.toString())
+                            // CachedNetworkImage(
+                            //   imageUrl: snapshot.data!.flickrImages.toString(),
+                            // ),
+                          ],
+                        );
+                      },
+                    );
+                  }
+                }),
           ),
         ],
       ),
