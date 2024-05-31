@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spacex_rocket/screen/home_screen/home_screen.dart';
+import 'package:spacex_rocket/view/home_screen/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
